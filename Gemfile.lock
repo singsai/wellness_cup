@@ -28,7 +28,11 @@ GEM
     activesupport (3.2.11)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    annotate (2.5.0)
+      rake
     arel (3.0.2)
+    awesome_nested_fields (0.6.0)
+      rails (>= 3.0.0)
     builder (3.0.4)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -141,6 +145,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
+  awesome_nested_fields
   capybara (= 1.1.2)
   coffee-rails (~> 3.2.1)
   jquery-rails
