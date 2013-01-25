@@ -6,4 +6,12 @@ class Member < ActiveRecord::Base
   
   has_many :weigh_ins, :order => "id ASC"
   accepts_nested_attributes_for :weigh_ins
+  
+  email_regex =/\A[a-z0-9][\w+\-.]+@[a-z\d.]+\.[a-z]+\z/i
+
+  validates :email, :presence   => true,
+                    :format     => { :with => email_regex },
+                    :uniqueness => { :case_sensitive => false }  
+
+  before_save { |user| user.email = email.downcase }  
 end
