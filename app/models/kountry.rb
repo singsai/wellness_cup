@@ -1,3 +1,3 @@
 class Kountry < ActiveRecord::Base
-  attr_accessible :code, :name
+  attr_accessible :name, :code
 end

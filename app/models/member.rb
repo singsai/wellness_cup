@@ -1,3 +1,9 @@
 class Member < ActiveRecord::Base
-  attr_accessible :captain, :country_code, :email, :first_name, :last_name, :location_id, :phone_number, :shib, :team_id
+  attr_accessible :first_name, :last_name, :email, :location_id, :weigh_ins_attributes, :country_code, :phone_number, :shib, :team_id, :captain
+  
+  belongs_to :team
+  belongs_to :location
+  
+  has_many :weigh_ins, :order => "id ASC"
+  accepts_nested_attributes_for :weigh_ins
 end
